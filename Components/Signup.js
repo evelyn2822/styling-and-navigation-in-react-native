@@ -7,7 +7,7 @@ function SignupScreen(props) {
   const [username, setUsername] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-
+  
   return (
     <View
       style={{

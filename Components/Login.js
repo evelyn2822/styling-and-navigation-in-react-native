@@ -1,11 +1,17 @@
 import * as React from "react";
 import { View, Image, StyleSheet, Text } from "react-native";
-import { TextInput, Button } from "react-native-paper";
+import { TextInput, Button, IconButton } from "react-native-paper";
 import logo from "../../HANZ/assets/hanz.png";
 
 function LoginScreen(props) {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [hidePassword, setHidePassword] = React.useState(true);
+
+  const togglePasswordVisibility = () => {
+    setHidePassword(!hidePassword);
+
+  };
 
   return (
     <View
@@ -29,7 +35,7 @@ function LoginScreen(props) {
         label="Password"
         value={password}
         onChangeText={(text) => setPassword(text)}
-        secureTextEntry={true} // Hide password
+        secureTextEntry={hidePassword} // Hide password
       />
       <Text
         style={styles.forgot}
